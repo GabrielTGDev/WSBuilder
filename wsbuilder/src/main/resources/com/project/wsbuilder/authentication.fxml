@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.ImageView?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.project.wsbuilder.controllers.AuthenticationController"
+           stylesheets="@css/authentication.css">
+    <children>
+        <HBox styleClass="auth-box">
+            <children>
+                <VBox fx:id="authContainer" styleClass="auth-container">
+                    <children>
+                        <!-- LOGIN Section -->
+                        <VBox fx:id="loginSection" styleClass="auth-section">
+                            <children>
+                                <Label text="LOGIN" id="login-section" styleClass="auth-title"/>
+                                <TextField promptText="MyUserName" styleClass="auth-field"/>
+                                <PasswordField promptText="Password..." styleClass="auth-field"/>
+                                <Hyperlink text="I've forgot my password" styleClass="auth-link"/>
+                                <Button text="LOG IN" styleClass="auth-button-blue"/>
+                            </children>
+                        </VBox>
+                        <!-- GUEST USER Section -->
+                        <VBox fx:id="guestUserSection" id="guest-section" styleClass="auth-section">
+                            <children>
+                                <Button text="GUEST USER" styleClass="auth-button-orange" onAction="#switchToPrimary"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <!-- SIGN IN Section -->
+                <VBox fx:id="signInContainer" styleClass="auth-container">
+                    <children>
+                        <VBox fx:id="signInSection" styleClass="auth-section">
+                            <children>
+                                <Label text="SIGN IN" styleClass="auth-title"/>
+                                <TextField promptText="Username..." styleClass="auth-field"/>
+                                <TextField promptText="Email..." styleClass="auth-field"/>
+                                <PasswordField promptText="Password..." styleClass="auth-field"/>
+                                <Button text="SIGN IN" styleClass="auth-button-green"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <!-- Help Icon -->
+        <ImageView fx:id="helpIcon" styleClass="help-icon" StackPane.alignment="TOP_RIGHT"/>
+    </children>
+</StackPane>
