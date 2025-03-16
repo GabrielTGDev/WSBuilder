@@ -1,10 +1,12 @@
 package com.project.wsbuilder.controllers;
 
+import com.project.wsbuilder.App;
 import com.project.wsbuilder.dbconnection.DatabaseConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,7 +36,7 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
-    private void switchToSecondary() {
-        // Implement the method to switch to the secondary view
+    private void switchToSecondary() throws IOException {
+        App.setRoot("secondary");
     }
 }

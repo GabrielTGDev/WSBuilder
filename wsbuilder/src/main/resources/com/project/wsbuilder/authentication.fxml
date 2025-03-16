@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Region?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.project.wsbuilder.controllers.AuthenticationController"
+           stylesheets="@css/root.css, @css/authentication.css">
+
+    <children>
+        <HBox styleClass="auth-box">
+            <children>
+                <VBox fx:id="authContainer" styleClass="auth-container" spacing="20">
+                    <children>
+                        <VBox fx:id="loginSection" styleClass="auth-section" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label text="LOGIN" styleClass="auth-title"/>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Username:" styleClass="auth-label"/>
+                                        <TextField fx:id="loginUsernameField" promptText="MyUserName"
+                                                   styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Password:" styleClass="auth-label"/>
+                                        <PasswordField fx:id="loginPasswordField" promptText="Password..."
+                                                       styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <VBox styleClass="auth-forgot">
+                                    <children>
+                                        <Hyperlink text="I've forgot my password" styleClass="auth-link"/>
+                                    </children>
+                                </VBox>
+                                <Button text="LOG IN" styleClass="auth-button-blue" onAction="#handleLogin"/>
+                                <Label fx:id="loginErrorLabel" textFill="red"/>
+                            </children>
+                        </VBox>
+                        <Region fx:id="authContainerRegion" VBox.vgrow="ALWAYS"/>
+                        <VBox fx:id="guestUserSection" styleClass="auth-section">
+                            <children>
+                                <Button text="GUEST USER" styleClass="auth-button-orange" onAction="#switchToPrimary"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <VBox fx:id="signInContainer" styleClass="auth-container">
+                    <children>
+                        <VBox fx:id="signInSection" styleClass="auth-section" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label text="SIGN IN" styleClass="auth-title"/>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Username:" styleClass="auth-label"/>
+                                        <TextField fx:id="signInUsernameField" promptText="Username..."
+                                                   styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Email:" styleClass="auth-label"/>
+                                        <TextField fx:id="signInEmailField" promptText="Email..."
+                                                   styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Password:" styleClass="auth-label"/>
+                                        <PasswordField fx:id="signInPasswordField" promptText="Password..."
+                                                       styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <Button text="SIGN IN" styleClass="auth-button-green" onAction="#handleSignIn"/>
+                                <Label fx:id="signInErrorLabel" textFill="red"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <ImageView fx:id="helpIcon" styleClass="help-icon" StackPane.alignment="TOP_RIGHT"/>
+    </children>
+</StackPane>

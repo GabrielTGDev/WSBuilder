@@ -1,0 +1,115 @@
+
+/* Contenedor HBox que agrupa login/guest y sign in */
+.auth-box {
+    -fx-alignment: center;
+    -fx-padding: 20;
+    -fx-spacing: 20; /* Espacio horizontal entre columnas */
+}
+
+/* Cada columna (VBox) tendrá 300x400 */
+.auth-container {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 400px;
+    /* Sin min/max para simplificar; se mantiene en 300x400 */
+}
+
+/* Secciones internas (LOGIN, GUEST, SIGN IN) */
+.auth-section {
+    -fx-background-color: #1E1E1E;
+    -fx-alignment: center;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 2, 2);
+
+    /* Añadimos padding y un spacing para que los controles tengan separación vertical */
+    -fx-padding: 20;
+    -fx-spacing: 10;
+}
+
+#authContainer{
+    -fx-spacing: 10;
+}
+
+#authContainerRegion {
+    -fx-max-height: 20px; /* Altura máxima */
+    -fx-pref-height: 10px; /* Altura preferida */
+}
+
+/* Título principal (LOGIN / SIGN IN) */
+.auth-title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}
+
+/* Labels */
+
+.auth-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+}
+
+.auth-inputs {
+    -fx-alignment: CENTER_LEFT;
+    -fx-hgrow: ALWAYS;
+}
+
+.auth-forgot {
+    -fx-alignment: CENTER_RIGHT;
+    -fx-hgrow: ALWAYS;
+}
+
+/* Campos de texto */
+.auth-field {
+    -fx-background-color: #3e3e3e;
+    -fx-text-fill: #d3d3d3;
+    -fx-prompt-text-fill: #d3d3d3;
+    -fx-border-color: #d3d3d3;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Enlace para "I've forgot my password" */
+.auth-link {
+    -fx-text-fill: #ffffff;
+    -fx-underline: true;
+}
+
+/* Botón azul (LOG IN) */
+.auth-button-blue {
+    -fx-background-color: #007ACC;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 5, 0.5, 0, 0);
+}
+
+/* Botón naranja (GUEST USER) */
+.auth-button-orange {
+    -fx-background-color: #CC5200;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 5, 0.5, 0, 0);
+}
+
+/* Botón verde (SIGN IN) */
+.auth-button-green {
+    -fx-background-color: #14CC00;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 5, 0.5, 0, 0);
+}
+
+/* Icono de ayuda */
+.help-icon {
+    -fx-padding: 10;
+    -fx-translate-x: -10px; /* Ajuste horizontal */
+    -fx-translate-y: 10px;  /* Ajuste vertical */
+    -fx-fit-height: 20;
+    -fx-fit-width: 20;
+}

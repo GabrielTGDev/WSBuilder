@@ -33,4 +33,8 @@ public class DatabaseConnection implements AutoCloseable {
             connection.close();
         }
     }
+
+    public Connection getConnection() {
+        return connection;
+    }
 }

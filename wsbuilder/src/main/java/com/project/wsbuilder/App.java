@@ -31,8 +31,9 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         if (!launched) {
-            scene = new Scene(loadFXML("primary"), 640, 480);
+            scene = new Scene(loadFXML("authentication"), 700, 400);
             stage.setScene(scene);
+            stage.setResizable(false); // Deshabilita el redimensionamiento
             stage.show();
             launched = true;
         }
@@ -51,7 +52,7 @@ public class App extends Application {
      * @param fxml the name of the FXML file to load
      * @throws IOException if an error occurs during scene root change
      */
-    static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
