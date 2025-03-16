@@ -46,8 +46,8 @@ class AppTest extends ApplicationTest {
     void start_initialSceneIsSet() {
         Node root = lookup(".root").query(); // Query the node with the CSS class 'root'
         assertNotNull(root); // Assert that the node is not null
-        assertEquals(640, root.getLayoutBounds().getWidth()); // Assert that the node's width is 640
-        assertEquals(480, root.getLayoutBounds().getHeight()); // Assert that the node's height is 480
+        assertEquals(700, root.getLayoutBounds().getWidth()); // Assert that the node's width is 700
+        assertEquals(400, root.getLayoutBounds().getHeight()); // Assert that the node's height is 400
     }
 
     /**
