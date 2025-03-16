@@ -105,11 +105,3 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 5, 0.5, 0, 0);
 }
 
-/* Icono de ayuda */
-.help-icon {
-    -fx-padding: 10;
-    -fx-translate-x: -10px; /* Ajuste horizontal */
-    -fx-translate-y: 10px;  /* Ajuste vertical */
-    -fx-fit-height: 20;
-    -fx-fit-width: 20;
-}

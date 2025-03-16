@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Region?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.project.wsbuilder.controllers.MainViewController"
+           prefWidth="1024" prefHeight="800"
+           stylesheets="@css/root.css, @css/mainview.css">
+
+    <children>
+        <VBox>
+            <children>
+                <HBox styleClass="title-bar">
+                    <children>
+                        <ImageView fx:id="homeIcon" styleClass="home-icon"/>
+                        <Label text="Home" styleClass="title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <ImageView fx:id="helpIcon" styleClass="help-icon"/>
+                    </children>
+                </HBox>
+                <Region fx:id="viewTitleRegion" VBox.vgrow="ALWAYS"/>
+                <HBox fx:id="contentBox" spacing="10" alignment="CENTER">
+                    <!-- Columnas dinámicas según el tipo de usuario -->
+                </HBox>
+                <Region fx:id="menuRegion" VBox.vgrow="ALWAYS"/>
+                <HBox fx:id="menu" alignment="CENTER">
+                    <!-- Botones del menú -->
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</StackPane>

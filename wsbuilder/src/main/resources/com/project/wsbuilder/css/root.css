@@ -2,3 +2,12 @@
 .root {
     -fx-background-color: #2e2e2e;
 }
+
+/* Icono de ayuda */
+.help-icon {
+    -fx-padding: 10;
+    -fx-translate-x: -10px; /* Ajuste horizontal */
+    -fx-translate-y: 10px;  /* Ajuste vertical */
+    -fx-fit-height: 20;
+    -fx-fit-width: 20;
+}

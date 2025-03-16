@@ -49,7 +49,7 @@
                         <Region fx:id="authContainerRegion" VBox.vgrow="ALWAYS"/>
                         <VBox fx:id="guestUserSection" styleClass="auth-section">
                             <children>
-                                <Button text="GUEST USER" styleClass="auth-button-orange" onAction="#switchToPrimary"/>
+                                <Button text="GUEST USER" styleClass="auth-button-orange" onAction="#switchToMainView"/>
                             </children>
                         </VBox>
                     </children>

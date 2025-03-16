@@ -1,4 +1,4 @@
-package com.project.wsbuilder;
+package com.project.wsbuilder.models;
 
 import com.project.wsbuilder.dbconnection.DatabaseConnection;
 
@@ -17,6 +17,8 @@ public class UserModel {
     private String description;
     private Timestamp createdAt;
     private Timestamp updatedAt;
+
+    private static boolean loggedIn = false;
 
     // Getters and Setters
     public int getId() {
@@ -112,6 +114,7 @@ public class UserModel {
             if (rs.next()) {
                 String storedHash = rs.getString("password_hash");
                 String hashedPassword = hashPassword(password);
+                loggedIn = true;
                 return storedHash.equals(hashedPassword);
             }
         } catch (SQLException | NoSuchAlgorithmException e) {
@@ -130,6 +133,7 @@ public class UserModel {
             pstmt.setString(2, email);
             pstmt.setString(3, hashedPassword);
             int rowsAffected = pstmt.executeUpdate();
+            loggedIn = true;
             return rowsAffected > 0;
         } catch (SQLException e) {
             if (e.getSQLState().equals("23505")) { // Unique violation
@@ -141,5 +145,13 @@ public class UserModel {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public static boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public static void logout() {
+        loggedIn = false;
     }
 }

@@ -1,5 +1,6 @@
 package com.project.wsbuilder;
 
+import com.project.wsbuilder.models.UserModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,6 +22,10 @@ public class App extends Application {
      * The launched status of the application.
      */
     private static boolean launched = false;
+
+    public static Scene getScene() {
+        return scene;
+    }
 
     /**
      * Starts the JavaFX application.
@@ -54,6 +59,12 @@ public class App extends Application {
      */
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+        if ("mainview".equals(fxml)) {
+            scene.getWindow().setWidth(UserModel.isLoggedIn() ? 1074 : 1024);
+            scene.getWindow().setHeight(700);
+        } else {
+            scene.getWindow().sizeToScene(); // Ajustar el tamaño de la ventana al contenido
+        }
     }
 
     /**
