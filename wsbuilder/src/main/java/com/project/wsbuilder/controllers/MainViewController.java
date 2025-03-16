@@ -74,7 +74,7 @@ public class MainViewController {
     }
 
     private void loadIcons() {
-        homeIcon.setImage(new Image(getClass().getResource("/com/project/wsbuilder/files/images/menu/home_selected.png").toExternalForm()));
+        homeIcon.setImage(new Image(getClass().getResource("/com/project/wsbuilder/files/images/menu/home.png").toExternalForm()));
         helpIcon.setImage(new Image(getClass().getResource("/com/project/wsbuilder/files/images/help-icon.png").toExternalForm()));
     }
 
@@ -293,7 +293,7 @@ public class MainViewController {
                 item.getChildren().add(icon);
             }
 
-            Label itemLabel = new Label("Random words");
+            Label itemLabel = new Label("Future content");
             item.getChildren().add(itemLabel);
 
             column.getChildren().add(item);

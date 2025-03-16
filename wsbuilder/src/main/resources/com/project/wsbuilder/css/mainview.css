@@ -24,6 +24,7 @@
     -fx-spacing: 10;
     -fx-alignment: TOP_CENTER;
     -fx-pref-width: 250;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 5, 0.5, 2.5, 2.5);
 }
 
 .column-title {
@@ -36,7 +37,8 @@
     -fx-background-color: #3E3E42;
     -fx-pref-height: 20;
     -fx-padding: 5;
-    -fx-alignment: center-left; /* Centra el contenido verticalmente */
+    -fx-alignment: center-left;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 5, 0.5, 2.5, 2.5);
 }
 
 #menuRegion {
