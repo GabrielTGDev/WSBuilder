@@ -1,7 +1,3 @@
-/* Fondo general */
-.root {
-    -fx-background-color: #2e2e2e;
-}
 
 /* Contenedor HBox que agrupa login/guest y sign in */
 .auth-box {
@@ -44,6 +40,23 @@
     -fx-text-fill: #ffffff;
     -fx-alignment: center;
     -fx-font-weight: bold;
+}
+
+/* Labels */
+
+.auth-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+}
+
+.auth-inputs {
+    -fx-alignment: CENTER_LEFT;
+    -fx-hgrow: ALWAYS;
+}
+
+.auth-forgot {
+    -fx-alignment: CENTER_RIGHT;
+    -fx-hgrow: ALWAYS;
 }
 
 /* Campos de texto */

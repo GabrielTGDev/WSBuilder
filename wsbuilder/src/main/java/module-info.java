@@ -5,4 +5,5 @@ module com.project.wsbuilder {
 
     opens com.project.wsbuilder.controllers to javafx.fxml;
     exports com.project.wsbuilder;
+    exports com.project.wsbuilder.controllers;
 }

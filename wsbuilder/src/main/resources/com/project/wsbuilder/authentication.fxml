@@ -8,62 +8,86 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.image.ImageView?>
-
 <?import javafx.scene.layout.Region?>
+
 <StackPane xmlns="http://javafx.com/javafx/8.0.171"
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="com.project.wsbuilder.controllers.AuthenticationController"
-           stylesheets="@css/authentication.css">
+           stylesheets="@css/root.css, @css/authentication.css">
 
     <children>
-        <!-- Contenedor principal horizontal -->
         <HBox styleClass="auth-box">
             <children>
-                <!-- Columna izquierda: LOGIN + GUEST -->
                 <VBox fx:id="authContainer" styleClass="auth-container" spacing="20">
                     <children>
-                        <!-- Sección LOGIN abajo -->
                         <VBox fx:id="loginSection" styleClass="auth-section" VBox.vgrow="ALWAYS">
                             <children>
                                 <Label text="LOGIN" styleClass="auth-title"/>
-                                <TextField promptText="MyUserName" styleClass="auth-field"/>
-                                <PasswordField promptText="Password..." styleClass="auth-field"/>
-                                <Hyperlink text="I've forgot my password" styleClass="auth-link"/>
-                                <Button text="LOG IN" styleClass="auth-button-blue"/>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Username:" styleClass="auth-label"/>
+                                        <TextField fx:id="loginUsernameField" promptText="MyUserName"
+                                                   styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Password:" styleClass="auth-label"/>
+                                        <PasswordField fx:id="loginPasswordField" promptText="Password..."
+                                                       styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <VBox styleClass="auth-forgot">
+                                    <children>
+                                        <Hyperlink text="I've forgot my password" styleClass="auth-link"/>
+                                    </children>
+                                </VBox>
+                                <Button text="LOG IN" styleClass="auth-button-blue" onAction="#handleLogin"/>
+                                <Label fx:id="loginErrorLabel" textFill="red"/>
                             </children>
                         </VBox>
-
-                        <!-- Región intermedia que crece y empuja el loginSection hacia abajo -->
                         <Region fx:id="authContainerRegion" VBox.vgrow="ALWAYS"/>
-
-                        <!-- Sección de GUEST USER arriba -->
                         <VBox fx:id="guestUserSection" styleClass="auth-section">
                             <children>
-                                <Button text="GUEST USER" styleClass="auth-button-orange"/>
+                                <Button text="GUEST USER" styleClass="auth-button-orange" onAction="#switchToPrimary"/>
                             </children>
                         </VBox>
                     </children>
                 </VBox>
-
-
-                <!-- Columna derecha: SIGN IN -->
                 <VBox fx:id="signInContainer" styleClass="auth-container">
                     <children>
                         <VBox fx:id="signInSection" styleClass="auth-section" VBox.vgrow="ALWAYS">
                             <children>
                                 <Label text="SIGN IN" styleClass="auth-title"/>
-                                <TextField promptText="Username..." styleClass="auth-field"/>
-                                <TextField promptText="Email..." styleClass="auth-field"/>
-                                <PasswordField promptText="Password..." styleClass="auth-field"/>
-                                <Button text="SIGN IN" styleClass="auth-button-green"/>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Username:" styleClass="auth-label"/>
+                                        <TextField fx:id="signInUsernameField" promptText="Username..."
+                                                   styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Email:" styleClass="auth-label"/>
+                                        <TextField fx:id="signInEmailField" promptText="Email..."
+                                                   styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <VBox styleClass="auth-inputs">
+                                    <children>
+                                        <Label text="Password:" styleClass="auth-label"/>
+                                        <PasswordField fx:id="signInPasswordField" promptText="Password..."
+                                                       styleClass="auth-field"/>
+                                    </children>
+                                </VBox>
+                                <Button text="SIGN IN" styleClass="auth-button-green" onAction="#handleSignIn"/>
+                                <Label fx:id="signInErrorLabel" textFill="red"/>
                             </children>
                         </VBox>
                     </children>
                 </VBox>
             </children>
         </HBox>
-
-        <!-- Icono de ayuda (arriba a la derecha) -->
         <ImageView fx:id="helpIcon" styleClass="help-icon" StackPane.alignment="TOP_RIGHT"/>
     </children>
 </StackPane>
