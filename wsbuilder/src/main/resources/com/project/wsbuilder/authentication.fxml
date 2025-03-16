@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -10,37 +9,47 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.image.ImageView?>
 
+<?import javafx.scene.layout.Region?>
 <StackPane xmlns="http://javafx.com/javafx/8.0.171"
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="com.project.wsbuilder.controllers.AuthenticationController"
            stylesheets="@css/authentication.css">
+
     <children>
+        <!-- Contenedor principal horizontal -->
         <HBox styleClass="auth-box">
             <children>
-                <VBox fx:id="authContainer" styleClass="auth-container">
+                <!-- Columna izquierda: LOGIN + GUEST -->
+                <VBox fx:id="authContainer" styleClass="auth-container" spacing="20">
                     <children>
-                        <!-- LOGIN Section -->
-                        <VBox fx:id="loginSection" styleClass="auth-section">
+                        <!-- Sección LOGIN abajo -->
+                        <VBox fx:id="loginSection" styleClass="auth-section" VBox.vgrow="ALWAYS">
                             <children>
-                                <Label text="LOGIN" id="login-section" styleClass="auth-title"/>
+                                <Label text="LOGIN" styleClass="auth-title"/>
                                 <TextField promptText="MyUserName" styleClass="auth-field"/>
                                 <PasswordField promptText="Password..." styleClass="auth-field"/>
                                 <Hyperlink text="I've forgot my password" styleClass="auth-link"/>
                                 <Button text="LOG IN" styleClass="auth-button-blue"/>
                             </children>
                         </VBox>
-                        <!-- GUEST USER Section -->
-                        <VBox fx:id="guestUserSection" id="guest-section" styleClass="auth-section">
+
+                        <!-- Región intermedia que crece y empuja el loginSection hacia abajo -->
+                        <Region fx:id="authContainerRegion" VBox.vgrow="ALWAYS"/>
+
+                        <!-- Sección de GUEST USER arriba -->
+                        <VBox fx:id="guestUserSection" styleClass="auth-section">
                             <children>
-                                <Button text="GUEST USER" styleClass="auth-button-orange" onAction="#switchToPrimary"/>
+                                <Button text="GUEST USER" styleClass="auth-button-orange"/>
                             </children>
                         </VBox>
                     </children>
                 </VBox>
-                <!-- SIGN IN Section -->
+
+
+                <!-- Columna derecha: SIGN IN -->
                 <VBox fx:id="signInContainer" styleClass="auth-container">
                     <children>
-                        <VBox fx:id="signInSection" styleClass="auth-section">
+                        <VBox fx:id="signInSection" styleClass="auth-section" VBox.vgrow="ALWAYS">
                             <children>
                                 <Label text="SIGN IN" styleClass="auth-title"/>
                                 <TextField promptText="Username..." styleClass="auth-field"/>
@@ -53,7 +62,8 @@
                 </VBox>
             </children>
         </HBox>
-        <!-- Help Icon -->
+
+        <!-- Icono de ayuda (arriba a la derecha) -->
         <ImageView fx:id="helpIcon" styleClass="help-icon" StackPane.alignment="TOP_RIGHT"/>
     </children>
 </StackPane>

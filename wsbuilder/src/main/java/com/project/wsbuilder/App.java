@@ -31,7 +31,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         if (!launched) {
-            scene = new Scene(loadFXML("authentication"), 800, 600);
+            scene = new Scene(loadFXML("authentication"), 700, 400);
             stage.setScene(scene);
             stage.setResizable(false); // Deshabilita el redimensionamiento
             stage.show();
