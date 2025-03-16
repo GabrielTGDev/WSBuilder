@@ -1,7 +1,7 @@
 package com.project.wsbuilder.controllers;
 
 import com.project.wsbuilder.App;
-import com.project.wsbuilder.UserModel;
+import com.project.wsbuilder.models.UserModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -83,7 +84,8 @@ public class AuthenticationController {
         String password = loginPasswordField.getText();
         if (UserModel.authenticate(username, password)) {
             try {
-                App.setRoot("primary");
+                App.setRoot("mainview");
+                closeModal();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -99,7 +101,8 @@ public class AuthenticationController {
         String password = signInPasswordField.getText();
         if (UserModel.register(username, email, password)) {
             try {
-                App.setRoot("primary");
+                App.setRoot("mainview");
+                closeModal();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -109,11 +112,22 @@ public class AuthenticationController {
     }
 
     @FXML
-    private void switchToPrimary() {
+    private void switchToMainView() {
         try {
-            App.setRoot("primary");
+            App.setRoot("mainview");
+            if (UserModel.isLoggedIn()) {
+                App.getScene().getWindow().setWidth(App.getScene().getWindow().getWidth() + 50);
+            }
+            closeModal();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void closeModal() {
+        if (loginUsernameField.getScene() != null) {
+            Stage stage = (Stage) loginUsernameField.getScene().getWindow();
+            stage.close();
         }
     }
 }

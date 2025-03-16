@@ -1,0 +1,78 @@
+/* Fondo general */
+.root {
+    -fx-background-color: #2e2e2e;
+}
+
+/* Header */
+.header {
+    -fx-background-color: #3a3a3a;
+}
+
+/* Icono de ayuda */
+.help-icon {
+    -fx-fit-height: 20;
+    -fx-fit-width: 20;
+}
+
+/* Título principal (Home) */
+.title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-padding: 0 10 0 10;
+}
+
+/* Contenido principal */
+.content {
+    -fx-background-color: #3a3a3a;
+}
+
+/* Columna */
+.column {
+    -fx-background-color: #1E1E1E;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-alignment: TOP_CENTER;
+    -fx-pref-width: 250;
+}
+
+/* Título de la columna */
+.column-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* Grid de items */
+.item-grid {
+    -fx-vgap: 5;
+    -fx-hgap: 5;
+    -fx-pref-width: 200;
+    -fx-text-fill: #ffffff;
+}
+
+/* Contenido del item */
+.item-content {
+    -fx-background-color: #3E3E42;
+    -fx-text-fill: #ffffff;
+    -fx-pref-height: 20;
+}
+
+/* Región superior al menu */
+#menuRegion {
+    -fx-max-height: 200px; /* Altura máxima */
+    -fx-pref-height: 200px; /* Altura preferida */
+}
+
+/* Menú */
+#menu {
+    -fx-background-color: #1E1E1E;
+}
+
+/* Botones del menú */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-padding: 20 0;
+    -fx-cursor: hand;
+}
+
