@@ -61,7 +61,7 @@ public class App extends Application {
         scene.setRoot(loadFXML(fxml));
         if ("mainview".equals(fxml)) {
             scene.getWindow().setWidth(UserModel.isLoggedIn() ? 1074 : 1024);
-            scene.getWindow().setHeight(600);
+            scene.getWindow().setHeight(700);
         } else {
             scene.getWindow().sizeToScene(); // Ajustar el tamaño de la ventana al contenido
         }

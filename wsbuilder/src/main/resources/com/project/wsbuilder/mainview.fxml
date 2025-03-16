@@ -10,12 +10,12 @@
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="com.project.wsbuilder.controllers.MainViewController"
            prefWidth="1024" prefHeight="800"
-           stylesheets="@css/mainview.css">
+           stylesheets="@css/root.css, @css/mainview.css">
 
     <children>
         <VBox>
             <children>
-                <HBox>
+                <HBox styleClass="title-bar">
                     <children>
                         <ImageView fx:id="homeIcon" styleClass="home-icon"/>
                         <Label text="Home" styleClass="title"/>
@@ -23,6 +23,7 @@
                         <ImageView fx:id="helpIcon" styleClass="help-icon"/>
                     </children>
                 </HBox>
+                <Region fx:id="viewTitleRegion" VBox.vgrow="ALWAYS"/>
                 <HBox fx:id="contentBox" spacing="10" alignment="CENTER">
                     <!-- Columnas dinámicas según el tipo de usuario -->
                 </HBox>
