@@ -42,7 +42,7 @@
                                         <Hyperlink text="I've forgot my password" styleClass="auth-link"/>
                                     </children>
                                 </VBox>
-                                <Button text="LOG IN" styleClass="auth-button-blue" onAction="#handleLogin"/>
+                                <Button fx:id="loginButton" text="LOG IN" styleClass="auth-button-blue" onAction="#handleLogin"/>
                                 <Label fx:id="loginErrorLabel" textFill="red"/>
                             </children>
                         </VBox>
@@ -80,7 +80,7 @@
                                                        styleClass="auth-field"/>
                                     </children>
                                 </VBox>
-                                <Button text="SIGN IN" styleClass="auth-button-green" onAction="#handleSignIn"/>
+                                <Button fx:id="signInButton" text="SIGN IN" styleClass="auth-button-green" onAction="#handleSignIn"/>
                                 <Label fx:id="signInErrorLabel" textFill="red"/>
                             </children>
                         </VBox>

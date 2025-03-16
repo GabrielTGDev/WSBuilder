@@ -18,6 +18,11 @@ public class UserModel {
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
+    // Constantes de conexión a la base de datos
+    private static final String DB_URL = "jdbc:postgresql://localhost:3007/wsbuilder";
+    private static final String USER = "root";
+    private static final String PASS = "root";
+
     private static boolean loggedIn = false;
 
     // Getters and Setters
@@ -153,5 +158,14 @@ public class UserModel {
 
     public static void logout() {
         loggedIn = false;
+    }
+
+    public static boolean checkDatabaseConnection() {
+        try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS)) {
+            return connection != null && !connection.isClosed();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

@@ -49,9 +49,29 @@ public class AuthenticationController {
     private Label signInErrorLabel;
 
     @FXML
+    private Button loginButton;
+
+    @FXML
+    private Button signInButton;
+
+    private boolean isDatabaseConnected() {
+        try {
+            // Aquí deberías poner tu lógica para verificar la conexión a la base de datos
+            // Por ejemplo, una simple consulta SQL
+            return UserModel.checkDatabaseConnection();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @FXML
     public void initialize() {
         loadSvgIcon();
         addEnterKeyHandler();
+        if (!isDatabaseConnected()) {
+            disableFormComponents();
+        }
     }
 
     private void loadSvgIcon() {
@@ -129,5 +149,30 @@ public class AuthenticationController {
             Stage stage = (Stage) loginUsernameField.getScene().getWindow();
             stage.close();
         }
+    }
+
+    private void disableFormComponents() {
+        loginUsernameField.setDisable(true);
+        loginPasswordField.setDisable(true);
+        signInUsernameField.setDisable(true);
+        signInEmailField.setDisable(true);
+        signInPasswordField.setDisable(true);
+        loginErrorLabel.setText("Database connection failed. Please try again later.");
+        signInErrorLabel.setText("Database connection failed. Please try again later.");
+
+        // Cambiar el color de los componentes a gris oscuro
+        String grayStyle = "-fx-background-color: #A9A9A9;";
+        loginUsernameField.setStyle(grayStyle);
+        loginPasswordField.setStyle(grayStyle);
+        signInUsernameField.setStyle(grayStyle);
+        signInEmailField.setStyle(grayStyle);
+        signInPasswordField.setStyle(grayStyle);
+
+        // Deshabilitar los botones de log in y sign in y cambiar su color a gris oscuro
+        loginButton.setDisable(true);
+        signInButton.setDisable(true);
+        String buttonGrayStyle = "-fx-background-color: #A9A9A9;";
+        loginButton.setStyle(buttonGrayStyle);
+        signInButton.setStyle(buttonGrayStyle);
     }
 }
